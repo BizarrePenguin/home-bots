@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # install some extra dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
+    ros-${ROS_DISTRO}-foxglove-bridge \
     ros-${ROS_DISTRO}-rosbag2-storage-mcap \
     && rm -rf /var/lib/apt/lists/*
 
