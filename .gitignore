@@ -4,3 +4,6 @@
 # ros build and install folders
 build
 install
+
+# tmp and log files
+log
