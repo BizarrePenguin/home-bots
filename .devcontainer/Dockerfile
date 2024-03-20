@@ -12,6 +12,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-${ROS_DISTRO}-rosbag2-storage-mcap \
     && rm -rf /var/lib/apt/lists/*
 
+# install non-ros tools for development
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gnupg2 \
+    && rm -rf /var/lib/apt/lists/*
+
 ## The following is based on https://github.com/ijnek/ros-devcontainer-template
 
 # Add ros user with same UID and GID as your host system
