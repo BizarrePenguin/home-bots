@@ -1,0 +1,6 @@
+# tmp and filesystem files
+.DS_store
+
+# ros build and install folders
+build
+install
