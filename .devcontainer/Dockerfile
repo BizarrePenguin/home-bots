@@ -11,6 +11,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-pip \
     ros-${ROS_DISTRO}-foxglove-bridge \
     ros-${ROS_DISTRO}-rosbag2-storage-mcap \
+    ros-${ROS_DISTRO}-ros-gz \
     && rm -rf /var/lib/apt/lists/*
 
 # install non-ros tools for development
