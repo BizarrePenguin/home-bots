@@ -17,6 +17,7 @@
 	"containerEnv": {
 		"ROS_DOMAIN_ID": "42"
 	},
+	"postCreateCommand": "echo 'source ${containerWorkspaceFolder}/install/local_setup.bash' >> ~/.bashrc",
 	// Set *default* container specific settings.json values on container create.
 	"customizations": {
 		"vscode": {
