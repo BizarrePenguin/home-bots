@@ -31,7 +31,8 @@
 				"streetsidesoftware.code-spell-checker",
 				"yzhang.markdown-all-in-one",
 				"zachflower.uncrustify",
-				"ms-vscode.cmake-tools"
+				"ms-vscode.cmake-tools",
+				"redhat.vscode-xml"
 			]
 		}
 	}
