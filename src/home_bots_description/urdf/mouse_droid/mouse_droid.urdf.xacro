@@ -1,4 +1,50 @@
-<?xml version="1.0" ?>
+<?xml version="1.0"?>
 <robot name="home_bots_mouse_droid" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <xacro:include filename="wheels.urdf.xacro" />
+
+    <xacro:property name="wheel_radius" value="0.02" />
+    <xacro:property name="wheel_thickness" value="0.01" />
+    <xacro:property name="track_width" value="0.1" />
+    <xacro:property name="wheel_base" value="0.15" />
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.2 ${track_width - wheel_thickness} 0.02" />
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="base_footprint"></link>
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link" />
+        <child link="base_footprint" />
+        <origin xyz="0 0 -${wheel_radius}" />
+    </joint>
+
+    <xacro:wheel name="left_rear_wheel" direction="1" radius="${wheel_radius}"
+        thickness="${wheel_thickness}">
+        <parent link="base_link" />
+        <origin xyz="-${wheel_base/2} ${(track_width-wheel_thickness)/2} 0" rpy="-${pi/2} 0 0" />
+    </xacro:wheel>
+
+    <xacro:wheel name="right_rear_wheel" direction="-1" radius="${wheel_radius}"
+        thickness="${wheel_thickness}">
+        <parent link="base_link" />
+        <origin xyz="-${wheel_base/2} -${(track_width-wheel_thickness)/2} 0" rpy="${pi/2} 0 0" />
+    </xacro:wheel>
+
+    <xacro:wheel_steered name="left_front_wheel" direction="1" radius="${wheel_radius}"
+        thickness="${wheel_thickness}">
+        <parent link="base_link" />
+        <origin xyz="${wheel_base/2} ${(track_width-wheel_thickness)/2} 0" rpy="-${pi/2} 0 0" />
+    </xacro:wheel_steered>
+
+    <xacro:wheel_steered name="right_front_wheel" direction="-1" radius="${wheel_radius}"
+        thickness="${wheel_thickness}">
+        <parent link="base_link" />
+        <origin xyz="${wheel_base/2} -${(track_width-wheel_thickness)/2} 0" rpy="${pi/2} 0 0" />
+    </xacro:wheel_steered>
 
 </robot>
